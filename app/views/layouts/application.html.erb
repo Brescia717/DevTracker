@@ -9,6 +9,8 @@
 <body>
 
   <div class="container">
+    <%= render 'layouts/nav' %>
+
     <% flash.each do |name, msg| %>
       <div class="alert-box <%= name %>">
         <%= msg %>
@@ -16,7 +18,7 @@
     <% end %>
 
     <%= yield %>
-    
+
   </div>
 
 </body>

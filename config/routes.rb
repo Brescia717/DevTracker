@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :welcome, only: [:index]
+  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+
+  resources :welcome, only: :index
+  resources :users
+
+  match '/users/:id/finish_signup' => 'users#finish_signup',
+    via: [:get, :patch], :as => :finish_signup
+
 
   root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
