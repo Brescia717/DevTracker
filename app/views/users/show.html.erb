@@ -1,8 +1,35 @@
 <div class="container">
-  <h1><%= @user.name %>'s Profile</h1>
+  <h1><%= @user.name || @user.email %>'s Profile</h1>
 
-  <p>
-    Summary:
-    <%= @profile.summary %>
-  </p>
+  <% if @profile %>
+    <ul>
+      <li>
+        Summary:
+        <%= @profile.summary.nil? ? "Coming soon!" : @profile.summary %>
+      </li>
+      <li>
+        Website:
+        <%= @profile.website.nil? ? "" : (link_to @profile.website, "http://#{@profile.website}") %>
+      </li>
+      <li>
+        GitHub:
+        <%= @profile.github.nil? ? "" : (link_to @profile.github, "http://#{@profile.github}") %>
+      </li>
+      <li>
+        LinkedIn:
+        <%= @profile.linkedin.nil? ? "" : (link_to @profile.linkedin, "http://#{@profile.linkedin}") %>
+      </li>
+      <li>
+        Desired Salary:
+        $<%= @profile.desired_salary.nil? ? "not specified" : @profile.desired_salary %>k/year
+      </li>
+      <li>
+        Desired Hourly:
+        $<%= @profile.desired_hourly.nil? ? "not specified" : @profile.desired_hourly %>/hour
+      </li>
+    </ul>
+    <p>
+      <%= link_to "Edit Profile", edit_user_profile_path(@user, @profile) if (current_user == @user) %>
+    </p>
+  <% end %>
 </div>
