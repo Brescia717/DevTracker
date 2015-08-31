@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150831154939) do
+ActiveRecord::Schema.define(version: 20150831163658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,20 @@ ActiveRecord::Schema.define(version: 20150831154939) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "summary"
+    t.text     "comments"
+    t.string   "website"
+    t.string   "linkedin"
+    t.string   "github"
+    t.string   "availability"
+    t.string   "desired_salary"
+    t.string   "desired_hourly"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
