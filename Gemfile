@@ -51,4 +51,5 @@ group :development, :test do
   gem 'spring'
   gem 'mailcatcher'
   gem 'pry-rails'
+  gem 'dotenv-rails'
 end
