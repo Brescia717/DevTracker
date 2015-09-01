@@ -1,12 +1,24 @@
 class ProfilesController < ApplicationController
-  before_action :set_user, only: [:show, :create, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :new, :create, :edit, :update, :destroy]
   before_action :authenticate_user!
 
   def show
     @profile = @user.profile unless @user.profile.nil?
   end
 
+  def new
+    @profile = Profile.new
+
+  end
+
   def create
+    @profile = Profile.new(profile_params)
+    @profile.user_id = @user.id
+    if @profile.save
+      redirect_to current_user
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -18,6 +30,7 @@ class ProfilesController < ApplicationController
     if @profile.update(profile_params)
       redirect_to current_user
     else
+      flash[:error] = @profile.errors.full_messages.to_sentence
       render 'edit'
     end
   end
@@ -27,7 +40,7 @@ class ProfilesController < ApplicationController
 
   private
     def set_user
-      @user = User.find(params[:id])
+      @user = User.find(params[:user_id])
     end
 
     def profile_params

@@ -18,20 +18,23 @@
         http://<%= f.text_field :linkedin, size: "40" %>
       </p>
       <p>
-        <%= f.label :desired_hourly %><br>
-        $<%= f.number_field :desired_hourly, in: 20..100, step: 5 %> per hour
-      </p>
-      <p>
         <%= f.label :desired_salary %><br>
         $<%= f.number_field :desired_salary, in: 40..200, step: 5 %>k yearly
+        <span>*required</span>
       </p>
+      <p>
+        <%= f.label :desired_hourly %><br>
+        $<%= f.number_field :desired_hourly, in: 20..100, step: 5 %> per hour
+        <span>*required</span>
+      </p>
+
       <div class="action">
         <%= f.submit "Update", class: "button" %>
       </div>
     <% end %>
   <% else %>
     <p>
-      You do not have authorized access to this page.
+      You do not have authorized access to this page.<br>
       If you believe this to be in error, please contact administration.
     </p>
   <% end %>
