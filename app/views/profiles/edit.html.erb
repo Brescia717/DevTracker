@@ -1,0 +1,41 @@
+<div class="container">
+  <% if current_user.id == @profile.user_id %>
+    <%= form_for [@user, @profile] do |f| %>
+      <p>
+        <%= f.label :summary %><br>
+        <%= f.text_area :summary, size: "60x10" %>
+      </p>
+      <p>
+        <%= f.label :website %><br>
+        http://<%= f.text_field :website, size: "40" %>
+      </p>
+      <p>
+        <%= f.label :github %><br>
+        http://<%= f.text_field :github, size: "40" %>
+      </p>
+      <p>
+        <%= f.label :linkedin %><br>
+        http://<%= f.text_field :linkedin, size: "40" %>
+      </p>
+      <p>
+        <%= f.label :desired_salary %><br>
+        $<%= f.number_field :desired_salary, in: 40..200, step: 5 %>k yearly
+        <span>*required</span>
+      </p>
+      <p>
+        <%= f.label :desired_hourly %><br>
+        $<%= f.number_field :desired_hourly, in: 20..100, step: 5 %> per hour
+        <span>*required</span>
+      </p>
+
+      <div class="action">
+        <%= f.submit "Update", class: "button" %>
+      </div>
+    <% end %>
+  <% else %>
+    <p>
+      You do not have authorized access to this page.<br>
+      If you believe this to be in error, please contact administration.
+    </p>
+  <% end %>
+</div>

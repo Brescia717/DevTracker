@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  TEMP_EMAIL_PREFIX = 'change@me'
-  TEMP_EMAIL_REGEX = /\Achange@me/
+  TEMP_EMAIL_PREFIX = 'brescia717@gmail'
+  TEMP_EMAIL_REGEX = /\Abrescia717@gmail/
 
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable
