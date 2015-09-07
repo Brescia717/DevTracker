@@ -1,5 +1,5 @@
 if gon
-  $(".welcome.index").ready ->
+  $(".users.show").ready ->
     initMap = ->
     coord =
       lat: gon.profile.latitude

@@ -4,11 +4,12 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = @user.profile unless @user.profile.nil?
+    gon.profile = @profile
+    gon.user = @user
   end
 
   def new
     @profile = Profile.new
-
   end
 
   def create

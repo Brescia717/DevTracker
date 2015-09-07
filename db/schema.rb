@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20150901180216) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  # This table is for OAuth
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"

@@ -5,7 +5,10 @@ class UsersController < ApplicationController
 
   def show
     # authorize! :read, @user
-    @profile = Profile.where(user_id: params[:id]).first
+    @profile = @user.profile
+    @latLng = [@profile.latitude, @profile.longitude]
+    gon.profile = @profile
+    gon.user = @user
   end
 
   def create

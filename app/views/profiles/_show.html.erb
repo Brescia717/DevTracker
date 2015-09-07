@@ -35,7 +35,7 @@
     <% end %>
   </div>
 
-  <div class="map">
+  <!-- <div class="map">
     <h5>Map</h5>
     <iframe
       frameborder="0" style="border:0"
@@ -45,6 +45,10 @@
         ENV['GOOGLE_MAPS_KEY'] %>&q=<%=
         @profile.full_address %>" allowfullscreen>
     </iframe>
+  </div> -->
+
+  <div style='width: 800px;'>
+    <div id="map" style='width: 800px; height: 400px;'></div>
   </div>
 
 </div>
