@@ -22,6 +22,7 @@ if gon
         marker = new (google.maps.Marker)(
           position: userCoord
           map: map
+          icon: 'assets/computers.png'
           title: this.name )
         marker.addListener 'click', ->
           infowindow.open map, marker
