@@ -9,7 +9,7 @@ class Map
         name = profile.user.name
       end
       @arr << { user_id: profile.user_id, name: name, summary: profile.summary, latitude: profile.latitude,
-        longitude: profile.longitude }
+        longitude: profile.longitude, framework: profile.framework }
     end
 
     @arr
@@ -24,7 +24,7 @@ class Map
       name = profile.user.name
     end
     @arr << { name: name, summary: profile.summary, latitude: profile.latitude,
-      longitude: profile.longitude }
+      longitude: profile.longitude, framework: profile.framework }
 
     @arr
   end
