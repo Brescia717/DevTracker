@@ -28,6 +28,13 @@
         <span>*required</span>
       </p>
 
+      <div class="skills">
+        <p>
+          <%= f.label :framework %><br>
+          <%= f.select :framework, ["Rails", "Meteor"] %>
+        </p>
+      </div>
+
       <div class="address-fields">
         <div class="">
           <%= f.label :street_address %>*

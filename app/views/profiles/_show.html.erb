@@ -7,6 +7,10 @@
           <%= @profile.summary.nil? ? "Coming soon!" : @profile.summary %>
         </li>
         <li>
+          Primary framework:
+          <%= @profile.framework.nil? ? "Unspecified" : @profile.framework %>
+        </li>
+        <li>
           Website:
           <%= @profile.website.nil? ? "" : (link_to @profile.website, "http://#{@profile.website}") %>
         </li>
