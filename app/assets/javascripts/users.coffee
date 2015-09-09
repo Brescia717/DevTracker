@@ -6,7 +6,7 @@ if gon
         lat: this.latitude
         lng: this.longitude
       map = new (google.maps.Map)(document.getElementById('map'),
-        zoom: 4
+        zoom: 12
         center: coord)
       contentString = '<div id="content">' + '<div id="siteNotice">' + '</div>' +
         '<h1 id="firstHeading" class="firstHeading">' + this.name +

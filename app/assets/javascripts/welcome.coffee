@@ -19,10 +19,15 @@ if gon
 
           '</div>' + '</div>'
         infowindow = new (google.maps.InfoWindow)(content: contentString)
+        if this.framework == null
+          customIcon = 'assets/jobs.png'
+        else
+          customIcon = 'assets/' + this.framework + '.png'
         marker = new (google.maps.Marker)(
           position: userCoord
           map: map
-          icon: 'assets/computers.png'
+          icon: customIcon
+          animation: google.maps.Animation.DROP
           title: this.name )
         marker.addListener 'click', ->
           infowindow.open map, marker
