@@ -1,0 +1,18 @@
+<div class="container">
+  <%= content_tag "div", id: "profiles-search-form", class: "form", data: {frameworks: @frameworks} do %>
+    <%= form_tag profiles_path, method: "get", remote: true do %>
+      <%= label_tag :search %>
+      <%= text_field_tag :search, params[:search], id: "profiles-search-field", autocomplete: true %>
+
+      <%= submit_tag "Search", class: "button", id: "search-button", name: nil %>
+    <% end %>
+  <% end %>
+</div>
+<script type="text/javascript">
+  $(function(){
+    var frameworks = $('#profiles-search-form').data('frameworks');
+    $('#profiles-search-field').autocomplete({
+      source: frameworks
+    });
+  });
+</script>

@@ -1,0 +1,6 @@
+<%= content_tag "div", id: "results", data: {results: @map_data} do %>
+  <% if @results %>
+    <p><%= @results.first.framework %> devs:</p>
+  <% end %>
+  <hr>
+<% end %>
