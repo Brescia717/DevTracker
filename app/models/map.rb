@@ -1,6 +1,5 @@
 class Map
-  def get_welcome_markers
-    profiles = Profile.all
+  def get_welcome_markers(profiles)
     @arr = []
     profiles.each do |profile|
       if profile.user.name.nil?
