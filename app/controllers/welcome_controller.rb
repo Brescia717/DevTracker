@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-    gon.allProfiles = Map.new.get_welcome_markers
+    @profiles = Profile.all
+    gon.allProfiles = Map.new.get_welcome_markers(@profiles)
+    @frameworks = Profile.all_frameworks
   end
 end

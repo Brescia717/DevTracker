@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :finish_signup]
   before_action :authenticate_user!
 
+  def index
+  end
+
   def show
     # authorize! :read, @user
     @profile = @user.profile
@@ -13,6 +16,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        Profile.create!(user_id: @user.id)
         # Tell the UserMailer to send a welcome email after save
         UserMailer.welcome_email(@user).deliver_later
 

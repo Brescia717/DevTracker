@@ -1,6 +1,15 @@
 class ProfilesController < ApplicationController
-  before_action :set_user, only: [:show, :new, :create, :edit, :update, :destroy]
+  # before_action :set_user, only: [:show, :update, :destroy]
   before_action :authenticate_user!
+
+  def index
+    @results = Profile.search(params[:search])
+    get_map_data(@results)
+
+    respond_to do |format|
+      format.js
+    end
+  end
 
   def show
     @profile = @user.profile unless @user.profile.nil?
@@ -12,7 +21,7 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.new(profile_params)
-    @profile.user_id = @user.id
+    @profile.user_id = current_user.id
     if @profile.save
       redirect_to current_user
     else
@@ -21,6 +30,7 @@ class ProfilesController < ApplicationController
   end
 
   def edit
+    @user = current_user
     @profile = Profile.find(params[:id])
   end
 
@@ -40,6 +50,16 @@ class ProfilesController < ApplicationController
   private
     def set_user
       @user = User.find(params[:user_id])
+    end
+
+    def get_map_data(results)
+      @map_data = []
+      results.each do |r|
+        @map_data << {user_id: r.user_id, id: r.id, latitude: r.latitude,
+          longitude: r.longitude, summary: r.summary, framework: r.framework,
+          name: (User.where(id: r.user_id).first.name || User.where(id: r.user_id).first.email) }
+      end
+      @map_data
     end
 
     def profile_params
