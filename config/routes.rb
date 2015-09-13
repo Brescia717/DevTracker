@@ -2,10 +2,12 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
 
   resources :welcome, only: :index
-  resources :users do
-    resources :profiles, except: :index
-  end
+  resources :users
+  resources :profiles
 
+  get   '/users/:id/profile' => 'profiles#show', as: :user_profile
+  get   '/users/:id/profile/new' => 'profiles#new', as: :new_user_profile
+  # match '/users/:id/profile/edit' => 'profiles#edit', via: [:patch], as: :edit_user_profile
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
   match '/auth/:provider/callback', to: 'sessions#create', via: 'get'
   match '/auth/failure', to: redirect('/'), via: 'get'
