@@ -16,6 +16,10 @@
       <%= f.text_area :summary, size: "60x10" %>
     </p>
     <p>
+      <%= f.label :framework %><br>
+      <%= f.select :framework, ProfileHelper.available_frameworks %>
+    </p>
+    <p>
       <%= f.label :website %><br>
       http://<%= f.text_field :website, size: "40" %>
     </p>
@@ -40,20 +44,24 @@
 
     <div class="address-fields">
       <div class="">
-        <%= f.label :street_address %>*
+        <%= f.label :street_address %>
         <%= f.text_field :street_address %>
+        <span>*required</span>
       </div>
       <div class="">
-        <%= f.label :city %>*
+        <%= f.label :city %>
         <%= f.text_field :city %>
+        <span>*required</span>
       </div>
       <div class="">
-        <%= f.label :state %>*
+        <%= f.label :state %>
         <%= f.text_field :state %>
+        <span>*required</span>
       </div>
       <div class="">
-        <%= f.label :zip_code %>*
+        <%= f.label :zip_code %>
         <%= f.text_field :zip_code %>
+        <span>*required</span>
       </div>
     </div>
 
