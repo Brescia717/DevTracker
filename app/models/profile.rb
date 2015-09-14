@@ -21,13 +21,4 @@ class Profile < ActiveRecord::Base
     search ? where('framework ILIKE ?', "%#{search}%") : all
   end
 
-  def self.all_frameworks
-    distinct = find_by_sql('SELECT DISTINCT framework FROM profiles;')
-    distinct.each do |f|
-      @arr ||= []
-      @arr << f.framework
-    end
-    @arr.uniq
-  end
-
 end
