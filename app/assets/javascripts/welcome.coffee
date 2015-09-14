@@ -20,7 +20,7 @@ if gon
 
         '</div>' + '</div>'
       infowindow = new (google.maps.InfoWindow)(content: contentString)
-      if this.framework == null
+      if ((this.framework == null) || (this.framework == "Other"))
         customIcon = 'assets/jobs.png'
       else
         customIcon = 'assets/' + this.framework + '.png'
