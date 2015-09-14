@@ -16,10 +16,6 @@
       <%= f.text_area :summary, size: "60x10" %>
     </p>
     <p>
-      <%= f.label :framework %><br>
-      <%= f.select :framework, ProfileHelper.available_frameworks %>
-    </p>
-    <p>
       <%= f.label :website %><br>
       http://<%= f.text_field :website, size: "40" %>
     </p>
@@ -41,6 +37,13 @@
       $<%= f.number_field :desired_hourly, in: 20..100, step: 5 %> per hour
       <span>*required</span>
     </p>
+    
+    <div class="skills">
+      <p>
+        <%= f.label :framework %><br>
+        <%= f.select :framework, ProfileHelper.available_frameworks %>
+      </p>
+    </div>
 
     <div class="address-fields">
       <div class="">
