@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        Profile.create!(user_id: @user.id)
+        Profile.create!(user_id: @user.id) # check this; might not be neccessary
         # Tell the UserMailer to send a welcome email after save
         UserMailer.welcome_email(@user).deliver_later
 
