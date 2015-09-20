@@ -3,6 +3,9 @@ $('#map').ready(function () {
   $('#search-button').on('click', function() {
     setTimeout(function(){
       updatedResults = $('#results').data('results');
+      if (updatedResults === false) {
+        updatedResults = gon.allProfiles;
+      }
       console.log(updatedResults);
       initMap(); // Initialize map using updatedResults
     }, 1000);

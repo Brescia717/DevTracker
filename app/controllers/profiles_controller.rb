@@ -1,10 +1,10 @@
 class ProfilesController < ApplicationController
   # before_action :set_user, only: [:show, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @results = Profile.search(params[:search])
-    get_map_data(@results)
+    get_map_data(@results) # generates @map_data
 
     respond_to do |format|
       format.js
@@ -57,7 +57,7 @@ class ProfilesController < ApplicationController
       results.each do |r|
         @map_data << {user_id: r.user_id, id: r.id, latitude: r.latitude,
           longitude: r.longitude, summary: r.summary, framework: r.framework,
-          name: (User.where(id: r.user_id).first.name || User.where(id: r.user_id).first.email) }
+          name: (User.where(id: r.user_id).first.user_tag) }
       end
       @map_data
     end
