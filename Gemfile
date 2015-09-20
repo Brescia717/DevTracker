@@ -57,6 +57,18 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'mailcatcher'
+
   gem 'pry-rails'
   gem 'dotenv-rails'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'email_spec'
+  gem 'faker'
+  gem 'nyan-cat-formatter', :git => 'git@github.com:Brescia717/nyan-cat-formatter.git'
+  gem 'zelda-formatter'
+  gem 'valid_attribute'
+  gem 'shoulda-matchers'
+  gem 'guard-rspec', require: false
 end
