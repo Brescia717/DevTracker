@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get   '/users/:id/profile' => 'profiles#show', as: :user_profile
   get   '/users/:id/profile/new' => 'profiles#new', as: :new_user_profile
+  get   '/users/:id/settings' => 'users#settings', as: :user_settings
   # match '/users/:id/profile/edit' => 'profiles#edit', via: [:patch], as: :edit_user_profile
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
   match '/auth/:provider/callback', to: 'sessions#create', via: 'get'
