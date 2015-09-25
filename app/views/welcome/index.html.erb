@@ -13,4 +13,26 @@
     <%= render 'map' %>
   </div>
 
+  <hr>
+
+  <div id="side-bar">
+    <h2>Developers by Framework</h2>
+
+    <% ProfileHelper.available_frameworks.each do |framework| %>
+      <h3><%= framework %></h3>
+      <ul>
+        <% @profiles.each do |profile| %>
+          <% if profile.framework == framework %>
+            <li>
+              <p>
+                <span><%= profile.user.user_tag %></span><br>
+                <%= profile.summary %>
+              </p>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
 </div>
