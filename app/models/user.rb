@@ -60,4 +60,5 @@ class User < ActiveRecord::Base
   def user_tag
     self.name ? self.name : self.email
   end
+  
 end

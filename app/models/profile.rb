@@ -21,4 +21,8 @@ class Profile < ActiveRecord::Base
     search ? where('framework ILIKE ?', "%#{search}%") : all
   end
 
+  def owner?(user)
+    (user == self.user) ? true : false
+  end
+
 end
