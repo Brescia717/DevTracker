@@ -54,10 +54,11 @@ class ProfilesController < ApplicationController
 
     def get_map_data(results)
       @map_data = []
-      results.each do |r|
-        @map_data << {user_id: r.user_id, id: r.id, latitude: r.latitude,
-          longitude: r.longitude, summary: r.summary, framework: r.framework,
-          name: (User.where(id: r.user_id).first.user_tag) }
+      results.each do |profile|
+        @map_data << {user_id: profile.user_id, id: profile.id,
+          latitude: profile.latitude, longitude: profile.longitude,
+          summary: profile.summary, framework: profile.framework,
+          name: profile.user.user_tag }
       end
       @map_data
     end
