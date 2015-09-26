@@ -2,7 +2,7 @@ Welcome to DevTracker, <%= @user.name %>
 ===============================================
 
 You have successfully signed up to DevTracker.herokuapp.com,
-your username is: <%= @user.login %>.
+your username is: <%= @user.name ? @user.name : @user.email %>.
 
 To login to the site, just follow this link: <%= @url %>.
 

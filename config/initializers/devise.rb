@@ -262,6 +262,6 @@ Devise.setup do |config|
 
   # This needs to be updated with ENV keys/secrets
   config.omniauth :facebook, "KEY", "SECRET"
-  config.omniauth :twitter, "QLInZBd73Plny5bVQ8N7KVGwc", "8249xOSTTjDUHU3Rh9RXu26CrqDVCr38ekhCduTi6lxWM1bvhp"
+  config.omniauth :twitter, ENV["TWITTER_KEY"], ENV["TWITTER_SECRET"]
   config.omniauth :linked_in, "KEY", "SECRET"
 end

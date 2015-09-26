@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :finish_signup]
   before_action :authenticate_user!
-  # before_action :set_profile, only: [:show, :edit, :update, :destroy]
+
+  def index
+  end
 
   def show
     # authorize! :read, @user
-    @profile = Profile.where(user_id: params[:id]).first
+    @profile = @user.profile
+    gon.profile = Map.new.get_user_marker(@user)
   end
 
   def create
@@ -13,6 +16,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        Profile.create!(user_id: @user.id) # check this; might not be neccessary
         # Tell the UserMailer to send a welcome email after save
         UserMailer.welcome_email(@user).deliver_later
 
@@ -70,10 +74,6 @@ class UsersController < ApplicationController
     def set_user
       @user = User.find(params[:id])
     end
-
-    # def set_profile
-    #   @profile = Profile.where(user_id: params[:id])
-    # end
 
     def user_params
       accessible = [ :name, :email ] # extend with your own params

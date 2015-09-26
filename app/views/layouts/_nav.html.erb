@@ -3,11 +3,16 @@
 
   <ul>
     <% if current_user %>
-      <li><%= link_to "My Profile", user_path(current_user) %></li>
+      <% if current_user.profile.nil? %>
+        <li><%= link_to "Create your profile!", new_profile_path %></li>
+      <% else %>
+        <li><%= link_to "My Profile", user_path(current_user) %></li>
+      <% end %>
+      <li><%= link_to "Account Setting", user_settings_path(current_user) %></li>
       <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
     <% else %>
       <li><%= link_to "Sign up", new_user_registration_path %></li>
-      <li><%= link_to "Log in", new_user_session_path %></li>
+      <li id="log-in"><%= link_to "Log in", new_user_session_path %></li>
     <% end %>
   </ul>
 </div>

@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+ruby '2.2.0'
 gem 'rails', '4.2.2'
-# Use postgresql as the database for Active Record
+
+# db
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -15,11 +15,16 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'jquery-rails', '~> 4.0.3'
+gem 'jquery-ui-rails'
+# gem 'jquery-turbolinks'
+# gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+
+gem 'gon'
+# gem 'rabl-rails'
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -32,11 +37,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Authentication
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
+
+# Google Maps
+gem 'geocoder'
+gem 'underscore-rails'
+gem 'gmaps4rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,6 +58,19 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  
   gem 'mailcatcher'
   gem 'pry-rails'
+  gem 'dotenv-rails'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'email_spec'
+  gem 'faker'
+  gem 'nyan-cat-formatter', :git => 'git@github.com:Brescia717/nyan-cat-formatter.git'
+  gem 'zelda-formatter'
+  gem 'valid_attribute'
+  gem 'shoulda-matchers'
+  gem 'guard-rspec', require: false
 end

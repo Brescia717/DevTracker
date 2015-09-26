@@ -1,1 +1,38 @@
-<h1>Welcome!</h1>
+<div class="container">
+  <h1>Welcome!</h1>
+
+  <div class="profiles-search">
+    <%= render 'profiles_search_form' %>
+  </div>
+
+  <div class="results">
+    <%= render 'results' %>
+  </div>
+
+  <div class="map">
+    <%= render 'map' %>
+  </div>
+
+  <hr>
+
+  <div id="sidebar">
+    <h2>Developers by Framework</h2>
+
+    <% ProfileHelper.available_frameworks.each do |framework| %>
+      <h3><%= framework %></h3>
+      <ul>
+        <% @profiles.each do |profile| %>
+          <% if profile.framework == framework %>
+            <li>
+              <p>
+                <span><%= link_to profile.user.user_tag, user_path(profile.user_id) %></span><br>
+                <%= profile.summary %>
+              </p>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
+</div>

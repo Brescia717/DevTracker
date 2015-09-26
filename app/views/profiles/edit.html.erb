@@ -1,6 +1,6 @@
 <div class="container">
   <% if current_user.id == @profile.user_id %>
-    <%= form_for [@user, @profile] do |f| %>
+    <%= form_for @profile do |f| %>
       <p>
         <%= f.label :summary %><br>
         <%= f.text_area :summary, size: "60x10" %>
@@ -27,6 +27,36 @@
         $<%= f.number_field :desired_hourly, in: 20..100, step: 5 %> per hour
         <span>*required</span>
       </p>
+
+      <div class="skills">
+        <p>
+          <%= f.label :framework %><br>
+          <%= f.select :framework, ProfileHelper.available_frameworks %>
+        </p>
+      </div>
+
+      <div class="address-fields">
+        <div class="">
+          <%= f.label :street_address %>
+          <%= f.text_field :street_address %>
+          <span>*required</span>
+        </div>
+        <div class="">
+          <%= f.label :city %>
+          <%= f.text_field :city %>
+          <span>*required</span>
+        </div>
+        <div class="">
+          <%= f.label :state %>
+          <%= f.text_field :state %>
+          <span>*required</span>
+        </div>
+        <div class="">
+          <%= f.label :zip_code %>
+          <%= f.text_field :zip_code %>
+          <span>*required</span>
+        </div>
+      </div>
 
       <div class="action">
         <%= f.submit "Update", class: "button" %>
