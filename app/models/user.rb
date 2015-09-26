@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
-  has_one :profile
+  has_one :profile, dependent: :destroy
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
@@ -60,5 +60,5 @@ class User < ActiveRecord::Base
   def user_tag
     self.name ? self.name : self.email
   end
-  
+
 end
