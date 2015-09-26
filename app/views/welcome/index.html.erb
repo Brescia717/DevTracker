@@ -15,7 +15,7 @@
 
   <hr>
 
-  <div id="side-bar">
+  <div id="sidebar">
     <h2>Developers by Framework</h2>
 
     <% ProfileHelper.available_frameworks.each do |framework| %>
@@ -25,7 +25,7 @@
           <% if profile.framework == framework %>
             <li>
               <p>
-                <span><%= profile.user.user_tag %></span><br>
+                <span><%= link_to profile.user.user_tag, user_path(profile.user_id) %></span><br>
                 <%= profile.summary %>
               </p>
             </li>
