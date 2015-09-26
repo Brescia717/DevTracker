@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  # before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user, only: [:show]#, :update, :destroy]
   before_action :authenticate_user!, except: [:index]
 
   def index
@@ -49,7 +49,7 @@ class ProfilesController < ApplicationController
 
   private
     def set_user
-      @user = User.find(params[:user_id])
+      @user = User.find(params[:id])
     end
 
     def get_map_data(results)
