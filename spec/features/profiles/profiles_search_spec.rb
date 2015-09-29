@@ -28,6 +28,6 @@ feature "Search for profiles by framework", js: true do
     visit root_path
     fill_in("search", with: profile.framework)
     click_on "Search"
-    expect(page).to have_content "Meteor devs:"
+    expect(page).to have_content "#{profile.framework} devs:"
   end
 end
