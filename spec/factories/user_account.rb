@@ -3,7 +3,7 @@ FactoryGirl.define do
     user
 
     provider "twitter"
-    uid "twitter-user-id"
+    uid "123545" # was "twitter-user-id"
 
     trait :twitter do
       provider "twitter"
