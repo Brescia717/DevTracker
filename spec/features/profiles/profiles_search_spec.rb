@@ -5,17 +5,7 @@ feature "Search for profiles by framework", js: true do
 
   # Create user and log in
   background do
-    @user = create(:user)
-    visit root_path
-    sign_up # new_user_session_path
-
-    fill_in("Email", with: @user.email)
-    fill_in("Password", with: @user.password)
-    click_button "Log in"
-    expect(page).to have_content "You have to confirm your email address before continuing." #"Signed in successfully."
-    expect(last_email).to have_content @user.email
-    open_last_email
-    click_first_link_in_email
+    register_account  # support/form_helpers.rb
 
     click_link "Log in"
     fill_in("Email", with: @user.email)
