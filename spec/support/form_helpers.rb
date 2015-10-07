@@ -7,6 +7,7 @@ module FormHelpers
     find(:xpath, "//a[@href='/users/sign_in']").click
   end
 
+  # Creates and registers user account then returns them to the home page.
   def register_account
     @user = create(:user)
     visit root_path
