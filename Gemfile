@@ -74,4 +74,5 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'guard-rspec', require: false
   gem 'teaspoon-jasmine'
+  # gem 'jasmine-jquery-rails'
 end
