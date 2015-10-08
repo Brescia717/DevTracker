@@ -11,6 +11,7 @@ require 'support/mailer_macros'
 require 'valid_attribute'
 require 'email_spec'
 require 'support/form_helpers'
+require 'support/omniauth_macros.rb'
 # require 'capybara/email/rspec'
 # Add additional requires below this line. Rails is not loaded until this point!
 # OmniAuth.config.test_mode = true
@@ -64,8 +65,10 @@ RSpec.configure do |config|
   config.include FormHelpers, :type => :feature
   config.include FactoryGirl::Syntax::Methods
   config.include(MailerMacros)
+  config.include(OmniauthMacros)
   config.before(:each) { reset_email }
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
   # config.include AuthenticationHelper
 end
+OmniAuth.config.test_mode = true
