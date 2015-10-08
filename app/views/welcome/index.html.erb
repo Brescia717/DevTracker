@@ -12,30 +12,29 @@
   <div class="map">
     <%= render 'map' %>
     <div class="container">
-      <ul id="profiles-list">
+      <div id="sidebar">
+        <h2>Developers by Framework</h2>
 
-      </ul>
+        <% ProfileHelper.available_frameworks.each do |framework| %>
+          <h3><%= framework %></h3>
+          <ul>
+            <% @profiles.each do |profile| %>
+              <% if profile.framework == framework %>
+                <li>
+                  <p>
+                    <span id="<%= "pf-uid-#{profile.user_id}" %>"></span><br>
+                    <%= profile.summary %><br>
+                    <%= link_to "View profile", user_path(profile.user_id) %>
+                  </p>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
     </div>
   </div>
 
   <hr>
 
-  <div id="sidebar">
-    <h2>Developers by Framework</h2>
-
-    <% ProfileHelper.available_frameworks.each do |framework| %>
-      <h3><%= framework %></h3>
-      <ul>
-        <% @profiles.each do |profile| %>
-          <% if profile.framework == framework %>
-            <li>
-              <p>
-                <span><%= link_to profile.user.user_tag, user_path(profile.user_id) %></span><br>
-                <%= profile.summary %>
-              </p>
-            </li>
-          <% end %>
-        <% end %>
-      </ul>
-    <% end %>
-  </div>
+  
