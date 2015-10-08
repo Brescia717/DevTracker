@@ -3,7 +3,7 @@ FactoryGirl.define do
     sequence(:email) { |n| Faker::Internet.email("user_#{n}") }
     password "password"
     password_confirmation { password }
-    name ""
+    name Faker::Internet.user_name
 
     trait :with_twitter_account do
       after(:create) do |user|
