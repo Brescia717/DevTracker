@@ -19,7 +19,7 @@ feature "Visit profile" do
   end
 
   scenario "Visit your profile via 'Developers by framework' link" do
-    click_link("#{@user.name}") # says ambiguous because too many links are available
+    click_link "vp-#{@user.id}"
     expect(page).to have_content("This is an example summary.")
   end
 end

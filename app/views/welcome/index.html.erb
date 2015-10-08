@@ -24,7 +24,8 @@
                   <p>
                     <span id="<%= "pf-uid-#{profile.user_id}" %>"></span><br>
                     <%= profile.summary %><br>
-                    <%= link_to "View profile", user_path(profile.user_id) %>
+                    <%= link_to "View profile", user_path(profile.user_id),
+                      id: "vp-#{profile.user_id}" %>
                   </p>
                 </li>
               <% end %>
@@ -36,5 +37,3 @@
   </div>
 
   <hr>
-
-  
