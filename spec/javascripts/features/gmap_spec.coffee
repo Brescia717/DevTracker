@@ -11,6 +11,7 @@ describe "Clicking a map link", ->
 
   # This test is failing because the jquery returned element is not an object,
   # just a result of the found element (like a description of the element)
+  # I'm not sure how to fix this, so any advice or effort would be appreciated!
   it "should have event listener on maplink", ->
     spyEvent = spyOn 'a:first', 'click'
     $('a:first')[0].click

@@ -48,7 +48,7 @@ if gon
           infowindow.open map, marker
           return
         return
-      document.getElementById('profiles-list').innerHTML = sidebar
+      # document.getElementById('profiles-list').innerHTML = sidebar
       return
 
-    setTimeout initMap, 0
+    setTimeout initMap, 500
