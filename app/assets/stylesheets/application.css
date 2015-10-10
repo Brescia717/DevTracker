@@ -14,4 +14,6 @@
  *= require_self
  *= require jquery-ui
  *= require jquery-ui/autocomplete
+ *= require bootstrap/dist/css/bootstrap
+
  */

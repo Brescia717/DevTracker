@@ -18,5 +18,6 @@
 //= require jquery-readyselector
 //= require underscore
 //= require gmaps/google
+//= require bootstrap/dist/js/bootstrap
 // require turbolinks
 //= require_tree .

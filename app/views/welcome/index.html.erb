@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
   <h1>Welcome!</h1>
 
   <div class="profiles-search">
@@ -8,32 +8,51 @@
   <div class="results">
     <%= render 'results' %>
   </div>
+  <div class="row">
+    <div class="map col-md-9">
+      <%= render 'map' %>
+    </div>
 
-  <div class="map">
-    <%= render 'map' %>
     <div class="container">
-      <div id="sidebar">
-        <h2>Developers by Framework</h2>
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div id="sidebar" class="col-md-3">
+          <div class="panel panel-default panel-group">
+            <div class="panel-body">
+              <div class="panel-heading" role="tab" id="heading">
+                <h4 class="panel-title">Developers by Framework</h4>
+                <hr>
+                <% ProfileHelper.available_frameworks.each do |framework| %>
+                  <h3 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<%= framework %>" aria-expanded="true" aria-controls="<%= framework %>">
+                      <%= framework %><span class="caret"></span>
+                    </a>
+                  </h3>
+                  <div id="<%= framework %>" class="panel-collapse collapse panel-scroll in" role="tabpanel" aria-labelledby="<%= framework %>">
+                    <div id="profiles-by-framework">
+                      <ul>
+                        <% @profiles.each do |profile| %>
+                          <% if profile.framework == framework %>
+                            <li>
+                              <p>
+                                <span id="<%= "pf-uid-#{profile.user_id}" %>"></span><br>
+                                <div id="<%= "user-profile-#{profile.user_id}" %>" class="panel-collapse collapse in panel-scroll" role="tabpanel" aria-labelledby="headingOne">
+                                <%= link_to "View profile", user_path(profile.user_id),
+                                  id: "vp-#{profile.user_id}" %>
+                                </div>
+                              </p>
+                            </li>
+                          <% end %>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
 
-        <% ProfileHelper.available_frameworks.each do |framework| %>
-          <h3><%= framework %></h3>
-          <ul>
-            <% @profiles.each do |profile| %>
-              <% if profile.framework == framework %>
-                <li>
-                  <p>
-                    <span id="<%= "pf-uid-#{profile.user_id}" %>"></span><br>
-                    <%= profile.summary %><br>
-                    <%= link_to "View profile", user_path(profile.user_id),
-                      id: "vp-#{profile.user_id}" %>
-                  </p>
-                </li>
-              <% end %>
-            <% end %>
-          </ul>
-        <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
   <hr>

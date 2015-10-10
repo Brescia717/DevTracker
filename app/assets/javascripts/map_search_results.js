@@ -8,7 +8,7 @@ $('#map').ready(function () {
       }
       console.log(updatedResults);
       initMap(); // Initialize map using updatedResults
-    }, 1000);
+    }, 500);
   });
 
   function initMap() {
