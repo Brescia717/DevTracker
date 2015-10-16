@@ -14,7 +14,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  config.app_domain = 'devtracker.herokuapp.com'
+  config.app_domain = 'http://dev-tracker.herokuapp.com'
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
@@ -22,11 +22,11 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: '587',
-    enable_starttls_auto: false,
+    enable_starttls_auto: true,
     user_name: 'someuser',
     password: 'somepass',
     authentication: :plain,
-    domain: 'somedomain.com'
+    domain: 'http://dev-tracker.herokuapp.com'
   }
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
