@@ -65,7 +65,6 @@ class UsersController < ApplicationController
         sign_in(@user, :bypass => true)
         redirect_to @user, notice: 'Your profile was successfully updated.'
       else
-        redirect_to root_path
         @show_errors = true
       end
     end
