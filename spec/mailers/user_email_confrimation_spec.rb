@@ -12,7 +12,7 @@ RSpec.describe UserMailer, :type => :mailer do
     end
 
     it "renders the body" do
-      expect(mail.body.encoded).to match("To login to the site, just follow this link: http://localhost:3000/users/sign_in.")
+      expect(mail.body.encoded).to match("To login to the site, just follow this link: http://dev-tracker.herokuapp.com/users/sign_in.")
     end
   end
 

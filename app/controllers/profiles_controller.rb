@@ -17,6 +17,7 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
+    @frameworks = ProfileHelper.available_frameworks
   end
 
   def create
@@ -32,6 +33,7 @@ class ProfilesController < ApplicationController
   def edit
     @user = current_user
     @profile = Profile.find(params[:id])
+    @frameworks = ProfileHelper.available_frameworks
   end
 
   def update

@@ -37,11 +37,11 @@
       $<%= f.number_field :desired_hourly, in: 20..100, step: 5 %> per hour
       <span>*required</span>
     </p>
-    
+
     <div class="skills">
       <p>
         <%= f.label :framework %><br>
-        <%= f.select :framework, ProfileHelper.available_frameworks %>
+        <%= f.select :framework, @frameworks %>
       </p>
     </div>
 

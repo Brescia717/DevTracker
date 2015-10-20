@@ -1,5 +1,8 @@
 <div class="container-fluid">
   <h1>Welcome!</h1>
+  <span>
+    <img src="<%= image_path "Rails.png" %>" alt="" />
+  </span>
 
   <div class="profiles-search">
     <%= render 'profiles_search_form' %>
@@ -21,7 +24,7 @@
               <div class="panel-heading" role="tab" id="heading">
                 <h4 class="panel-title">Developers by Framework</h4>
                 <hr>
-                <% ProfileHelper.available_frameworks.each do |framework| %>
+                <% @frameworks.each do |framework| %>
                   <h3 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<%= framework %>" aria-expanded="true" aria-controls="<%= framework %>">
                       <%= framework %><span class="caret"></span>

@@ -17,7 +17,7 @@ if gon
           # The anchor tag will be changed before production
         contentString = '<div id="content">' + '<div id="siteNotice">' + '</div>' +
           '<h1 id="firstHeading" class="firstHeading">' +
-          '<a href="http://dev-tracker.herokuapp.com/users/' + this.user_id + '">' + this.name + '</a>' +
+          '<a href="/users/' + this.user_id + '">' + this.name + '</a>' +
           '</h1>' + '<div id="bodyContent">' + this.summary +
           '</div>' + '</div>'
         infowindow = new (google.maps.InfoWindow)(content: contentString)
