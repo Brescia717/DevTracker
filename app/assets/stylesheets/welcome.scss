@@ -1,3 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Orbitron);
+
+body.welcome.index {
+  h1 {
+    text-align: center;
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;} }
+
 #sidebar ul {
   list-style-type: none;
 }
@@ -7,6 +16,10 @@
 
 #sidebar h2 {
   box-sizing: border-box;
+}
+
+#profiles-search-field {
+  width: 220px;
 }
 
 #profiles-list {
@@ -30,12 +43,26 @@
   left: 20px;
 }
 
+/* styling for map */
 #map-container {
   margin-right: 30px;
 }
+
+
+@media screen and (min-width: 480px) {
+  #map {
+    width: 800px;
+    height: 400px;
+  }
+}
+
 
 .panel-scroll {
   max-height: 320px;
 	overflow: hidden;
 	overflow-y: auto;
+}
+
+.panel-heading h3.panel-title {
+  margin-bottom: 10px;
 }
