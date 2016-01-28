@@ -1,68 +1,68 @@
-@import url(https://fonts.googleapis.com/css?family=Orbitron);
-
+@import url(https://fonts.googleapis.com/css?family=Orbitron|Cambay:400,400italic);
+.jumbotron {
+  background: #6edae8 !important;
+}
 body.welcome.index {
-  h1 {
-    text-align: center;
-    position: relative;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: bold;} }
-
+  .page-header {
+    h1 {
+      text-align: center;
+      position: relative;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
+    h3 {
+      text-align: center;
+      position: relative;
+      font-family: 'Cambay', sans-serif;
+      font-style: italic;
+    }
+  }
+}
 #sidebar ul {
   list-style-type: none;
 }
 #sidebar ul li p span {
   font-weight: bold;
 }
-
 #sidebar h2 {
   box-sizing: border-box;
 }
-
 #profiles-search-field {
   width: 220px;
 }
-
 #profiles-list {
   list-style-type: none;
 }
-
 #profiles-by-framework {
   margin-right: 18%;
   text-align: left;
 }
-
 #profiles-by-framework li {
   border-bottom: thin black solid;
   margin-bottom: 5px;
 }
-
 #profiles-by-framework li:first-child {
   border-top: thin black solid;
   padding-top: 7px;
   margin-top: 8px;
   left: 20px;
 }
-
 /* styling for map */
 #map-container {
   margin-right: 30px;
 }
-
-
 @media screen and (min-width: 480px) {
   #map {
     width: 800px;
     height: 400px;
   }
 }
-
-
 .panel-scroll {
   max-height: 320px;
-	overflow: hidden;
-	overflow-y: auto;
+  overflow: hidden;
+  overflow-y: auto;
 }
-
 .panel-heading h3.panel-title {
   margin-bottom: 10px;
 }
