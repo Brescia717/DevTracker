@@ -12,6 +12,7 @@ $('#map').ready(function () {
   });
 
   function initMap() {
+    // var window.gmarkers = [];
     var coord, map;
     coord = {
       lat: 42.3725019,
@@ -29,7 +30,7 @@ $('#map').ready(function () {
       };
       contentString = '<div id="content">' + '<div id="siteNotice">' + '</div>' +
         '<h1 id="firstHeading" class="firstHeading">' +
-        '<a href="/users/' + this.user_id + '">' + 
+        '<a href="/users/' + this.user_id + '">' +
         this.name + '</a>' + '</h1>' + '<div id="bodyContent">' + this.summary +
         '</div>' + '</div>';
       infoWindow = new google.maps.InfoWindow({

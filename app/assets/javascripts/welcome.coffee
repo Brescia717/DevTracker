@@ -32,18 +32,8 @@ if gon
           animation: google.maps.Animation.DROP
           title: this.name )
         window.gmarkers.push marker
-        # sidebar += '<li class="map-link" id="' + marker.title + '">
-        #   <a href="javascript:myclick(' + (window.gmarkers.length-1) + ')">' +
-        #   marker.title + '<\/a>
-        #   <p>' + this.summary + '<br>
-        #   <a href="http://localhost:3000/users/' + this.user_id + '">View profile<\/a>
-        #   <\/p><\/li>';
         $('#pf-uid-'+this.user_id).prepend '<a href="javascript:myclick(' + (window.gmarkers.length-1) + ')">' +
         marker.title + '<\/a>'
-        # google.maps.event.addListener marker, 'click', ->
-        #   infowindow.setContent contentString
-        #   infowindow.open map, marker
-        #   return
         marker.addListener 'click', ->
           infowindow.open map, marker
           return
