@@ -1,18 +1,40 @@
-<div class="container nav-bar">
-  <h1><%= link_to "Home", root_path %></h1>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="navbar-brand navbar-center"><%= link_to "DevTracker", root_path %></div>
+    </div>
 
-  <ul>
-    <% if current_user %>
-      <% if current_user.profile.nil? %>
-        <li><%= link_to "Create your profile!", new_profile_path %></li>
+    <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+        <% if current_user.profile.nil? %>
+          <li><%= link_to "Create your profile!", new_profile_path %></li>
+        <% else %>
+          <li class="dropdown">
+            <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle"
+              data-toggle="dropdown" href="#" role="button">
+              My Account
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <%= link_to " View profile", user_path(current_user),
+                    class: "glyphicon glyphicon-user" %>
+              </li>
+              <li class="divider" role="separator"></li>
+              <li>
+                <%= link_to " Account settings", edit_user_registration_path(current_user),
+                    class: "glyphicon glyphicon-cog" %>
+              </li>
+            </ul>
+          </li>
+        <% end %>
+        <li>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        </li>
       <% else %>
-        <li><%= link_to "My Profile", user_path(current_user) %></li>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <li id="log-in"><%= link_to "Log in", new_user_session_path %></li>
       <% end %>
-      <li><%= link_to "Account Setting", user_settings_path(current_user) %></li>
-      <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-    <% else %>
-      <li><%= link_to "Sign up", new_user_registration_path %></li>
-      <li id="log-in"><%= link_to "Log in", new_user_session_path %></li>
-    <% end %>
-  </ul>
-</div>
+    </ul>
+  </div>
+</nav>

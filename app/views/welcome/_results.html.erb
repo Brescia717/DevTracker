@@ -1,5 +1,7 @@
 <%= content_tag "div", id: "results", data: {results: @map_data} do %>
-  <% if params[:search] && params[:search] != "" %>
+  <% if params[:search] && params[:search] != "" &&
+        @frameworks.include?(params[:search]) %>
+    <br>
     <p><%= params[:search] %> devs:</p>
   <% end %>
   <hr>
