@@ -32,8 +32,8 @@ if gon
           animation: google.maps.Animation.DROP
           title: this.name )
         window.gmarkers.push marker
-        $('#pf-uid-'+this.user_id).prepend '<a href="javascript:myclick(' + (window.gmarkers.length-1) + ')">' +
-        marker.title + '<\/a>'
+        $('#pf-uid-'+this.user_id).prepend '<a href="javascript:myclick(' +
+          (window.gmarkers.length-1) + ')">' + marker.title + '<\/a>'
         marker.addListener 'click', ->
           infowindow.open map, marker
           return

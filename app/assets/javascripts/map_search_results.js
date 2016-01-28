@@ -12,7 +12,7 @@ $('#map').ready(function () {
   });
 
   function initMap() {
-    // var window.gmarkers = [];
+    window.gmarkers = updatedResults;
     var coord, map;
     coord = {
       lat: 42.3725019,
@@ -48,7 +48,11 @@ $('#map').ready(function () {
         animation: google.maps.Animation.DROP,
         title: this.name
       });
+      console.log(window.gmarkers);
       marker.addListener('click', function() {
+        infoWindow.open(map, marker);
+      });
+      $('#pf-uid-'+this.user_id).click(function(e){
         infoWindow.open(map, marker);
       });
     });
