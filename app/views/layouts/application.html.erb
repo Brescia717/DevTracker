@@ -12,11 +12,11 @@
 </head>
 <body class="<%= controller_name %> <%= action_name %>">
 
-  <div class="container">
+  <div class="">
     <%= render 'layouts/nav' %>
 
     <% flash.each do |name, msg| %>
-      <div class="alert-box <%= name %>">
+      <div class="container alert-box <%= name %>">
         <%= msg %>
       </div>
     <% end %>
