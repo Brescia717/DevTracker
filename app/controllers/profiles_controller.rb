@@ -3,8 +3,9 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @results = Profile.search(params[:search])
-    get_map_data(@results) # generates @map_data
+    @results    = Profile.search(params[:search])
+    @map_data   = get_map_data(@results) # generates @map_data
+    @frameworks = ProfileHelper.available_frameworks
 
     respond_to do |format|
       format.js
@@ -55,14 +56,14 @@ class ProfilesController < ApplicationController
     end
 
     def get_map_data(results)
-      @map_data = []
+      map_data = []
       results.each do |profile|
-        @map_data << {user_id: profile.user_id, id: profile.id,
+        map_data << {user_id: profile.user_id, id: profile.id,
           latitude: profile.latitude, longitude: profile.longitude,
           summary: profile.summary, framework: profile.framework,
           name: profile.user.user_tag }
       end
-      @map_data
+      map_data
     end
 
     def profile_params
