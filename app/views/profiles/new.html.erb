@@ -1,11 +1,3 @@
 <div class="container profile-form">
-  <%= form_for @profile do |f| %>
-    <% @f = f %>
-
-    <%= render 'form' %>
-
-    <div class="action">
-      <%= @f.submit "Create", class: "btn btn-primary" %>
-    </div>
-  <% end %>
+  <%= render 'form' %>
 </div>

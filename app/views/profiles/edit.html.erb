@@ -1,14 +1,6 @@
 <div class="container profile-form">
   <% if current_user.id == @profile.user_id %>
-    <%= form_for @profile do |f| %>
-      <% @f = f %>
-
-      <%= render 'form' %>
-
-      <div class="action">
-        <%= @f.submit "Update", class: "btn btn-primary", id: "update-profile-btn" %>
-      </div>
-    <% end %>
+    <%= render 'form' %>
   <% else %>
     <p>
       You do not have authorized access to this page.<br>
