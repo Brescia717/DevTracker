@@ -13,7 +13,8 @@ feature "Visit profile" do
   end
 
   scenario "Visit your profile via 'My Profile' link" do
-    click_link "My Profile"
+    click_link "My Account"
+    click_link "view-profile-btn"
     expect(page).to have_content("#{@user.name}'s Profile")
     expect(page).to have_content("This is an example summary.")
   end
