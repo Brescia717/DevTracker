@@ -15,5 +15,6 @@
  *= require jquery-ui
  *= require jquery-ui/autocomplete
  *= require bootstrap/dist/css/bootstrap
-
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
