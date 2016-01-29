@@ -1,3 +1,4 @@
+<div class="profile-form">
 <%= form_for @profile do |f| %>
   <% if @profile.errors.any? %>
     <div class="error-explanation">
@@ -116,3 +117,4 @@
     <%= f.submit "Save", class: "btn btn-primary", id: "update-profile-btn" %>
   </div>
 <% end %>
+</div>
