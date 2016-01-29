@@ -16,5 +16,10 @@
  *= require jquery-ui/autocomplete
  *= require bootstrap/dist/css/bootstrap
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
+$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
+@import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
+
+// for bootstrap-sass gem only
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
