@@ -54,6 +54,9 @@ gem 'geocoder'
 gem 'underscore-rails'
 gem 'gmaps4rails'
 
+# Messaging
+gem 'mailboxer'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

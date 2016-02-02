@@ -58,6 +58,11 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     childprocess (0.5.5)
@@ -101,6 +106,8 @@ GEM
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.8)
+    foreigner (1.7.4)
+      activerecord (>= 3.0.0)
     formatador (0.2.5)
     geocoder (1.2.9)
     globalid (0.3.5)
@@ -151,6 +158,10 @@ GEM
     lumberjack (1.0.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mailboxer (0.13.0)
+      carrierwave (>= 0.5.8)
+      foreigner (>= 0.9.1)
+      rails (>= 3.2.0)
     mailcatcher (0.6.1)
       activesupport (>= 4.0.0, < 5)
       eventmachine (~> 1.0.0, <= 1.0.5)
@@ -359,6 +370,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails (~> 4.0.3)
   jquery-ui-rails
+  mailboxer
   mailcatcher
   nyan-cat-formatter!
   omniauth
