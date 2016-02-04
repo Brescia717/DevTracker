@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
 
   has_one :profile, dependent: :destroy
 
+  acts_as_messageable
+
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
     # Get the identity and user if they exist
