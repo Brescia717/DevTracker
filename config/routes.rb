@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   devise_for :users, :controllers => {
-    omniauth_callbacks: 'omniauth_callbacks',
-    registrations: 'registrations'
+    omniauth_callbacks: 'omniauth_callbacks'
   }
 
   resources :welcome, only: :index
