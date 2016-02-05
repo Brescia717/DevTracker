@@ -51,22 +51,23 @@ class ProfilesController < ApplicationController
   end
 
   private
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    def get_map_data(results)
-      map_data = []
-      results.each do |profile|
-        map_data << {user_id: profile.user_id, id: profile.id,
-          latitude: profile.latitude, longitude: profile.longitude,
-          summary: profile.summary, framework: profile.framework,
-          name: profile.user.user_tag }
-      end
-      map_data
-    end
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-    def profile_params
-      params.require(:profile).permit!
+  def get_map_data(results)
+    map_data = []
+    results.each do |profile|
+      map_data << { user_id: profile.user_id, id: profile.id,
+        latitude: profile.latitude, longitude: profile.longitude,
+        summary: profile.summary, framework: profile.framework,
+        name: profile.user.user_tag }
     end
+    map_data
+  end
+
+  def profile_params
+    params.require(:profile).permit!
+  end
 end
