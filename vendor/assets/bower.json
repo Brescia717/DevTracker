@@ -2,6 +2,7 @@
   "name": "dsl-generated dependencies",
   "dependencies": {
     "bootstrap": "latest",
-    "bootstrap-sass": "latest"
+    "bootstrap-sass": "latest",
+    "select2": "latest"
   }
 }

@@ -1,7 +1,14 @@
-<h1>"Your Conversations"</h1>
+<div class="container-fluid">
+  <h1>"Your Conversations"</h1>
 
-<ul class="list-group">
-  <%= render @conversations %>
-</ul>
+  <p>
+    <%= link_to 'Start conversation', new_message_path,
+        class: 'btn btn-lg btn-primary' %>
+  </p>
 
-<%= paginate @conversations %>
+  <ul class="list-group">
+    <%= render partial: 'conversation', collection: @conversations %>
+  </ul>
+
+  <%= paginate @conversations %>
+</div>
