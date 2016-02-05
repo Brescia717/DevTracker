@@ -6,9 +6,10 @@ gem 'rails', '4.2.2'
 # db
 gem 'pg'
 
-# assets
+# Styling
 # gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
+gem 'gravatar_image_tag'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

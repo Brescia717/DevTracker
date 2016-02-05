@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # Handles conversations re-routing if record not found.
   rescue_from ActiveRecord::RecordNotFound do
     flash[:warning] = 'Resource not found.'
     redirect_back_or conversations_path
