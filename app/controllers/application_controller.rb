@@ -16,6 +16,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  rescue_from ActiveRecord::RecordNotFound do
+    flash[:warning] = 'Resource not found.'
+    redirect_back_or conversations_path
+  end
+
+  def redirect_back_or(path)
+    redirect_to request.referer || path
+  end
+
   # Everything after this point is for devise to recognize name as a parameter.
   # Similarly, this is being handled by registrations_controller.rb and
   # config/routes.rb under devise.
