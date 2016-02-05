@@ -11,9 +11,6 @@ gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'gravatar_image_tag'
 gem 'select2-rails'
-# source 'https://rails-assets.org' do
-#   gem 'rails-assets-select2', '~> 4.0.0'
-# end
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
