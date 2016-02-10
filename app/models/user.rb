@@ -60,7 +60,8 @@ class User < ActiveRecord::Base
   end
 
   def user_tag
-    self.name ? self.name : self.email
+    email_tag = self.email.gsub(/@+\w+.+\z/, '')
+    self.name ? self.name : email_tag
   end
 
 end
