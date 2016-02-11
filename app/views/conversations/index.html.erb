@@ -1,10 +1,16 @@
 <div class="container-fluid">
   <h1><%= current_user.user_tag %>'s Conversations</h1>
-
+  <br>
+  <div class="panel">
   <p>
     <%= link_to "Start conversation", new_message_path,
-        class: "btn btn-lg btn-primary" %>
+        class: "btn btn-md btn-primary" %>
+
+    <%= link_to "Show users", users_path,
+        class: "btn btn-md btn-primary" %>
   </p>
+  </div>
+  <br>
   <div class="row">
     <div class="col-sm-3">
       <ul class="nav nav-pills nav-stacked">
