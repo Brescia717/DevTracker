@@ -1,42 +1,63 @@
-<div class="container">
-  <div class="form">
-    <% if @profile %>
-      <ul>
-        <li>
-          Summary:
-          <%= @profile.summary.nil? ? "Coming soon!" : @profile.summary %>
-        </li>
-        <li>
-          Primary framework:
-          <%= @profile.framework.nil? ? "Unspecified" : @profile.framework %>
-        </li>
-        <li>
-          Website:
-          <%= @profile.website.nil? ? "" : (link_to @profile.website, "http://#{@profile.website}") %>
-        </li>
-        <li>
-          GitHub:
-          <%= @profile.github.nil? ? "" : (link_to @profile.github, "http://#{@profile.github}") %>
-        </li>
-        <li>
-          LinkedIn:
-          <%= @profile.linkedin.nil? ? "" : (link_to @profile.linkedin, "http://#{@profile.linkedin}") %>
-        </li>
-        <li>
-          Desired Salary:
-          $<%= @profile.desired_salary.nil? ? "not specified" : @profile.desired_salary %>k/year
-        </li>
-        <li>
-          Desired Hourly:
-          $<%= @profile.desired_hourly.nil? ? "not specified" : @profile.desired_hourly %>/hour
-        </li>
-      </ul>
-      <p>
-        <%= link_to "Edit Profile", edit_profile_path(@profile), class: "btn btn-primary" if @profile.owner?(current_user) %>
-      </p>
-    <% else %>
-      <p><%= link_to "Create Profile", new_user_profile_path(@user) %></p>
-    <% end %>
+<div class="container" id="profile-info">
+  <div class="form-horizontal">
+    <div class="form-group">
+      <% if @profile %>
+        <div class="profile-info panel panel-defaul">
+          <div class="row">
+            <ul>
+              <li>
+                <span class="control-label col-sm-2">Summary:</span>
+                <div class="form-input col-sm-10">
+                  <div class="form-control" id="summary"><%= profile_summary %></div>
+                </div>
+              </li>
+              <li>
+                <span class="control-label col-sm-2">Primary framework:</span>
+                <div class="form-input col-sm-10">
+                  <div class="form-control"><%= profile_framework %></div>
+                </div>
+              </li>
+              <li>
+                <span class="control-label col-sm-2">Website:</span>
+                <div class="form-input col-sm-10">
+                  <div class="form-control"><%= profile_website %></div>
+                </div>
+              </li>
+              <li>
+                <span class="control-label col-sm-2">GitHub:</span>
+                <div class="form-input col-sm-10">
+                  <div class="form-control"><%= profile_github %></div>
+                </div>
+              </li>
+              <li>
+                <span class="control-label col-sm-2">LinkedIn:</span>
+                <div class="form-input col-sm-10">
+                  <div class="form-control"><%= profile_linkedin %></div>
+                </div>
+              </li>
+              <li>
+                <span class="control-label col-sm-2">Desired Salary:</span>
+                <div class="form-input col-sm-10">
+                  <div class="form-control"><%= profile_desired_salary %></div>
+                </div>
+              </li>
+              <li>
+                <span class="control-label col-sm-2">Desired Hourly:</span>
+                <div class="form-input col-sm-10">
+                  <div class="form-control"><%= profile_desired_hourly %></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p>
+          <%= link_to "Edit Profile", edit_profile_path(@profile),
+                      class: "btn btn-primary" if @profile.owner?(current_user) %>
+        </p>
+      <% else %>
+        <p><%= link_to "Create Profile", new_user_profile_path(@user) %></p>
+      <% end %>
+    </div>
   </div>
 
   <div style='width: 800px;'>

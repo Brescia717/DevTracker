@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
 
   has_one :profile, dependent: :destroy
 
+  acts_as_messageable
+
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
     # Get the identity and user if they exist
@@ -58,7 +60,8 @@ class User < ActiveRecord::Base
   end
 
   def user_tag
-    self.name ? self.name : self.email
+    email_tag = self.email.gsub(/@+\w+.+\z/, '').capitalize
+    self.name ? self.name : email_tag
   end
 
 end

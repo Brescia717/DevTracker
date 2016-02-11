@@ -6,9 +6,11 @@ gem 'rails', '4.2.2'
 # db
 gem 'pg'
 
-# assets
+# Styling
 # gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
+gem 'gravatar_image_tag'
+gem 'select2-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -17,7 +19,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# Use jquery as the JavaScript library
+# Use jQuery as the JavaScript library
 gem 'jquery-rails', '~> 4.0.3'
 gem 'jquery-ui-rails'
 gem "bower-rails", "~> 0.10.0"
@@ -53,6 +55,12 @@ gem 'omniauth-linkedin'
 gem 'geocoder'
 gem 'underscore-rails'
 gem 'gmaps4rails'
+
+# Messaging
+gem 'mailboxer'
+
+# Pagination
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

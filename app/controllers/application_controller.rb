@@ -15,4 +15,27 @@ class ApplicationController < ActionController::Base
       redirect_to current_user
     end
   end
+
+  # Handles conversations re-routing if record not found.
+  rescue_from ActiveRecord::RecordNotFound do
+    flash[:warning] = 'Resource not found.'
+    redirect_back_or conversations_path
+  end
+
+  def redirect_back_or(path)
+    redirect_to request.referer || path
+  end
+
+  # Everything after this point is for devise to recognize name as a parameter.
+  # Similarly, this is being handled by registrations_controller.rb and
+  # config/routes.rb under devise.
+  # This is just an alternate solution:
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :name
+    devise_parameter_sanitizer.for(:account_update) << :name
+  end
 end

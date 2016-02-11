@@ -16,9 +16,13 @@
     <%= render 'layouts/nav' %>
 
     <% flash.each do |name, msg| %>
-      <div class="container-fluid alert alert-success alert-box <%= name %>">
-        <%= msg %>
-      </div>
+      <% if name == 'alert' %>
+        <div class="container-fluid alert alert-danger alert-box <%= name %>">
+      <% else %>
+        <div class="container-fluid alert alert-success alert-box <%= name %>">
+      <% end %>
+          <%= msg %>
+        </div>
     <% end %>
 
     <%= yield %>

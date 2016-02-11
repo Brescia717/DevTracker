@@ -1,0 +1,17 @@
+.users.index {
+  ul {
+    list-style: none;
+
+    li {
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+  .panel {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background: rgba(95, 215, 215, 0.5);
+  }
+}
