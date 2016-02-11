@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :finish_signup]
+  before_action :set_profile, only: [:show]
   before_action :authenticate_user!
 
   def index
@@ -8,7 +9,6 @@ class UsersController < ApplicationController
 
   def show
     # authorize! :read, @user
-    @profile = @user.profile
     gon.profile = Map.new.get_user_marker(@user)
   end
 
@@ -72,13 +72,18 @@ class UsersController < ApplicationController
   end
 
   private
-    def set_user
-      @user = User.find(params[:id])
-    end
+  
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-    def user_params
-      accessible = [ :name, :email ] # extend with your own params
-      accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
-      params.require(:user).permit(accessible)
-    end
+  def set_profile
+    @profile = @user.profile
+  end
+
+  def user_params
+    accessible = [ :name, :email ] # extend with your own params
+    accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
+    params.require(:user).permit(accessible)
+  end
 end
