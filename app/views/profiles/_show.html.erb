@@ -1,42 +1,18 @@
-<div class="container">
+<div class="container" id="profile-info">
   <div class="form">
     <% if @profile %>
       <ul>
-        <li>
-          Summary:
-          <%= @profile.summary.nil? ? "Coming soon!" : @profile.summary %>
-        </li>
-        <li>
-          Primary framework:
-          <%= @profile.framework.nil? ? "Unspecified" : @profile.framework %>
-        </li>
-        <li>
-          Website:
-          <%= @profile.website.nil? ? "" : (link_to @profile.website,
-              "http://#{@profile.website}") %>
-        </li>
-        <li>
-          GitHub:
-          <%= @profile.github.nil? ? "" : (link_to @profile.github,
-              "http://#{@profile.github}") %>
-        </li>
-        <li>
-          LinkedIn:
-          <%= @profile.linkedin.nil? ? "" : (link_to @profile.linkedin,
-              "http://#{@profile.linkedin}") %>
-        </li>
-        <li>
-          Desired Salary:
-          $<%= @profile.desired_salary.nil? ? "not specified" : @profile.desired_salary %>k/year
-        </li>
-        <li>
-          Desired Hourly:
-          $<%= @profile.desired_hourly.nil? ? "not specified" : @profile.desired_hourly %>/hour
-        </li>
+        <li>Summary:           <%= profile_summary %></li>
+        <li>Primary framework: <%= profile_framework %></li>
+        <li>Website:           <%= profile_website %></li>
+        <li>GitHub:            <%= profile_github %></li>
+        <li>LinkedIn:          <%= profile_linkedin %></li>
+        <li>Desired Salary:   $<%= profile_desired_salary %>k/year</li>
+        <li>Desired Hourly:   $<%= profile_desired_hourly %>/hour</li>
       </ul>
       <p>
         <%= link_to "Edit Profile", edit_profile_path(@profile),
-            class: "btn btn-primary" if @profile.owner?(current_user) %>
+                    class: "btn btn-primary" if @profile.owner?(current_user) %>
       </p>
     <% else %>
       <p><%= link_to "Create Profile", new_user_profile_path(@user) %></p>

@@ -40,6 +40,7 @@ class ProfilesController < ApplicationController
   def update
     @profile = Profile.find(params[:id])
     if @profile.update(profile_params)
+      flash[:success] = "Your profile has been updated."
       redirect_to current_user
     else
       flash[:error] = @profile.errors.full_messages.to_sentence
