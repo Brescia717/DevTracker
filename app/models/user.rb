@@ -60,7 +60,7 @@ class User < ActiveRecord::Base
   end
 
   def user_tag
-    email_tag = self.email.gsub(/@+\w+.+\z/, '')
+    email_tag = self.email.gsub(/@+\w+.+\z/, '').capitalize
     self.name ? self.name : email_tag
   end
 
