@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @users = User.order('name ASC').page(params[:page]).per(30)
   end
 
   def show

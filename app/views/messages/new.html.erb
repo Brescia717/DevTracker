@@ -16,7 +16,7 @@
 
     <div class="form-group">
       <%= label_tag "recipients", "Choose recipients" %>
-      <%= select_tag "recipients", recipients_options, multiple: true,
+      <%= select_tag "recipients", recipients_options(@chosen_recipient), multiple: true,
           class: "form-control s2" %>
     </div>
 
