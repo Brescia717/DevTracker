@@ -4,7 +4,7 @@ module ProfileHelper
   end
 
   def profile_summary
-    @profile.summary.nil? ? "Coming soon!" : @profile.summary
+    (@profile.summary.eql? (nil || '')) ? "Coming soon!" : @profile.summary
   end
 
   def profile_framework
