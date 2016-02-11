@@ -3,6 +3,6 @@
   "dependencies": {
     "bootstrap": "latest",
     "bootstrap-sass": "latest",
-    "select2": "latest"
+    "sweetalert2": "latest"
   }
 }
