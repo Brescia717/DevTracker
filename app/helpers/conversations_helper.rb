@@ -4,7 +4,8 @@ module ConversationsHelper
     opts[:class] += ' active' if title.downcase == current_box
     count = box_count(title, @mailbox)
 
-    content_tag :li, link_to("#{title.capitalize} #{count}", conversations_path(box: title.downcase)), opts
+    content_tag :li, link_to( "#{title.capitalize} #{count}",
+                              conversations_path(box: title.downcase)), opts
   end
 
   def box_count(title, mailbox)
