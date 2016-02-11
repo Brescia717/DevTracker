@@ -7,6 +7,7 @@
 //= require jquery-ui/autocomplete
 //= require jquery-readyselector
 //= require select2
+//= require sweetalert2
 //= require underscore
 //= require gmaps/google
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
