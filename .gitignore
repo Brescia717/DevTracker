@@ -13,3 +13,4 @@
 /tmp
 .env
 notes.text
+/vendor/assets/bower_components
