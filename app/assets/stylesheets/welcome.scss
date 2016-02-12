@@ -83,11 +83,11 @@ div.panel-body{
     height: $max-height;
   }
 }
-@media only screen and (max-width : 320px) {
+@media only screen and (max-width: 375px) {
   #map {
     // float:left;
-    width:400px;
-    height: 200px;
+    width: 600px;
+    height: 300px;
   }
 }
 @media only screen and (max-device-width: 480px) {
