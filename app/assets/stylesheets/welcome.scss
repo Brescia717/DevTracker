@@ -39,12 +39,14 @@ div.panel-body{
 }
 #sidebar ul {
   list-style-type: none;
-}
-#sidebar ul li p span {
-  font-weight: bold;
-}
-#sidebar h2 {
-  box-sizing: border-box;
+
+  h2 {
+    box-sizing: border-box;
+  }
+
+  li p span {
+    font-weight: bold;
+  }
 }
 #profiles-search-field {
   width: 220px;
@@ -55,10 +57,10 @@ div.panel-body{
 #profiles-by-framework {
   margin-right: 18%;
   text-align: left;
-}
-#profiles-by-framework li {
-  border-bottom: thin black solid;
-  margin-bottom: 5px;
+  li {
+    border-bottom: thin black solid;
+    margin-bottom: 5px;
+  }
 }
 #profiles-by-framework li:first-child {
   border-top: thin black solid;
@@ -72,8 +74,16 @@ div.panel-body{
 }
 @media screen and (min-width: 480px) {
   #map {
+    float: left;
     width: 800px;
     height: 400px;
+  }
+}
+@media only screen and (max-width : 320px) {
+  #map {
+    float:left;
+    width:400px;
+    height: 200px;
   }
 }
 .panel-scroll {
