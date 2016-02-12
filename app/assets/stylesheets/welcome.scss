@@ -4,6 +4,10 @@
     src: url('/assets/glyphicons-halflings-regular.eot');
     src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
+$bg-color-welcome: rgba(52, 129, 244, 0.8);
+$max-width: 800px;
+$max-height: 400px;
+
 .jumbotron {
   background: #6edae8 !important;
 }
@@ -75,15 +79,21 @@ div.panel-body{
 @media screen and (min-width: 480px) {
   #map {
     float: left;
-    width: 800px;
-    height: 400px;
+    width: $max-width;
+    height: $max-height;
   }
 }
-@media only screen and (max-width : 320px) {
+@media only screen and (max-width: 375px) {
   #map {
-    float:left;
-    width:400px;
-    height: 200px;
+    // float:left;
+    width: 600px;
+    height: 300px;
+  }
+}
+@media only screen and (max-device-width: 480px) {
+  .sidebar {
+    min-width: 830px;
+    left: 15px;
   }
 }
 .panel-scroll {
@@ -93,4 +103,21 @@ div.panel-body{
 }
 .panel-heading h3.panel-title {
   margin-bottom: 10px;
+}
+
+// rgb(31, 112, 219)
+.welcome-background {
+  background: $bg-color-welcome;
+  padding: 30px;
+  border-radius: 2px;
+}
+#map {
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+.sidebar {
+  max-width: $max-width;
+  max-height: $max-height;
+  // float: left;
+  margin-right: auto;
 }
