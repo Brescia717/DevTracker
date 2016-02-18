@@ -17,6 +17,10 @@ $max-height: 400px;
   background: #6edae8 !important;
 }
 body.welcome.index {
+  .alert {
+    margin-top: -15px;
+    margin-bottom: 25px;
+  }
   .page-header {
     margin-top: -20px;
     padding-top: 150px;
