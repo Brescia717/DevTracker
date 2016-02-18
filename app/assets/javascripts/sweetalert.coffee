@@ -17,7 +17,7 @@ $.rails.showConfirmDialog = (link) ->
       confirmButtonText: 'Delete'
       cancelButtonText: 'Cancel'
       closeOnConfirm: false
-      closeOnCancel: false
+      closeOnCancel: true
     }, (isConfirm) ->
       if isConfirm
         return $.rails.confirmed link
