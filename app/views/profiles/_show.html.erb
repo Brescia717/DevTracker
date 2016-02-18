@@ -53,6 +53,8 @@
         <p>
           <%= link_to "Edit Profile", edit_profile_path(@profile),
                       class: "btn btn-primary" if @profile.owner?(current_user) %>
+          <%= link_to "Send message", new_message_path(to: @user.id),
+                      class: "btn btn-primary btn-lg" unless @profile.owner?(current_user)%>
         </p>
       <% else %>
         <p><%= link_to "Create Profile", new_user_profile_path(@user) %></p>
