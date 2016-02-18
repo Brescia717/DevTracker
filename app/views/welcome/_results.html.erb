@@ -1,7 +1,11 @@
-<%= content_tag "div", id: "results", data: {results: @map_data} do %>
+<%= content_tag "div", id: "results", class: "container-fluid",
+                       data: {results: @map_data} do %>
   <% if params[:search] && params[:search] != "" &&
         @frameworks.include?(params[:search]) %>
-    <br>
     <p><%= params[:search] %> devs:</p>
+  <% elsif params[:search] == "" %>
+    <p></p>
+  <% else %>
+    <p>No matches found.</p>
   <% end %>
 <% end %>
