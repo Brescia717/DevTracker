@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :finish_signup]
   before_action :set_profile, only: [:show]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
 
   def index
     @users = User.order('name ASC').page(params[:page]).per(30)
@@ -72,7 +72,7 @@ class UsersController < ApplicationController
   end
 
   private
-  
+
   def set_user
     @user = User.find(params[:id])
   end
