@@ -3,7 +3,7 @@
   <% if params[:search] && params[:search] != "" &&
         @frameworks.include?(params[:search]) %>
     <p><%= params[:search] %> devs:</p>
-  <% elsif params[:search] == "" %>
+  <% elsif !params[:search] || params[:search] == "" %>
     <p></p>
   <% else %>
     <p>No matches found.</p>
