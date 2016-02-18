@@ -7,7 +7,8 @@
 }
 
 // Variables
-$bg-color-welcome: rgba(52, 129, 244, 0.8);
+$welcome-bg-color: rgba(52, 129, 244, 0.8);
+$sidebar-bg-color: rgba(77, 255, 218, 0.28);
 $max-width: 800px;
 $max-height: 400px;
 
@@ -48,7 +49,7 @@ body.welcome.index {
   margin-left: auto;
 }
 div.panel-body{
-  background: rgba(77, 255, 218, 0.28);
+  background: $sidebar-bg-color;
 }
 .panel-title h4 {
   text-align: center;
@@ -134,7 +135,7 @@ div.panel-body{
 
 // rgb(31, 112, 219)
 .welcome-background {
-  background: $bg-color-welcome;
+  background: $welcome-bg-color;
   padding: 30px;
   border-radius: 2px;
 }

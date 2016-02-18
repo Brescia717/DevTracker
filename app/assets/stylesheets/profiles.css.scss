@@ -1,3 +1,16 @@
+// Variables
+$profile-bg-color: rgba(43, 214, 237, 0.7);
+
+//Styling
+.users.show {
+  background: $profile-bg-color;
+  h1 {
+    color: white;
+  }
+  #map {
+    margin-left: -14px;
+  }
+}
 .profile-form {
   margin-bottom: 2em;
   .form-group {
