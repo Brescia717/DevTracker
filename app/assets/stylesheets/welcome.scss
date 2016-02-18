@@ -1,13 +1,17 @@
+// Imports
 @import url(https://fonts.googleapis.com/css?family=Orbitron|Cambay:400,400italic);
 @font-face {
     font-family: 'Glyphicons Halflings';
     src: url('/assets/glyphicons-halflings-regular.eot');
     src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
+
+// Variables
 $bg-color-welcome: rgba(52, 129, 244, 0.8);
 $max-width: 800px;
 $max-height: 400px;
 
+// Styling
 .jumbotron {
   background: #6edae8 !important;
 }
@@ -29,6 +33,10 @@ body.welcome.index {
     }
   }
 }
+.welcome-content {
+  margin-right: auto;
+  margin-left: auto;
+}
 div.panel-body{
   background: rgba(77, 255, 218, 0.28);
 }
@@ -41,15 +49,24 @@ div.panel-body{
   margin-top: -5px;
   margin-bottom: 20px;
 }
-#sidebar ul {
-  list-style-type: none;
-
-  h2 {
-    box-sizing: border-box;
+#sidebar {
+  .panel {
+    float: left;
   }
-
-  li p span {
-    font-weight: bold;
+  a.btn.btn-default {
+    width: 200px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  ul {
+    list-style-type: none;
+    h2 {
+      box-sizing: border-box;
+    }
+    li p span {
+      display: inline;
+      font-weight: bold;
+    }
   }
 }
 #profiles-search-field {
