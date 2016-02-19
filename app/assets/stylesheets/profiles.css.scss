@@ -1,11 +1,11 @@
 // Variables
-$profile-bg-color: rgba(43, 214, 237, 0.7);
+$profile-bg-color: rgba(57, 166, 255, 0.5);//rgba(110, 223, 235, 0.5);// rgba(43, 214, 237, 0.7);
 
 //Styling
 .users.show {
   background: $profile-bg-color;
   h1 {
-    color: white;
+    color: rgb(87, 87, 87);
   }
   #map {
     margin-left: -14px;
