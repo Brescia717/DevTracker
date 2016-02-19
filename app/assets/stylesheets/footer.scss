@@ -1,0 +1,75 @@
+footer {
+  text-align: left;
+  padding: 50px 0;
+  margin-top: 100px;
+  color: #99979c;
+  background-color: #2a2730;
+  display: block;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  #contact-me {
+    h5 {
+      color: white;
+      padding-bottom: 10px;
+    }
+    p {
+      margin: 1px;
+      color: gray;
+      // font-size: 85%;
+      &:last-child {
+        padding-bottom: 10px;
+      }
+    }
+    a {
+      color: white;
+      &:hover {
+        color: #3194e4;
+      }
+    }
+  }
+  #follow-me {
+    h5 {
+      color: white;
+      padding-bottom: 10px;
+      margin-left: 6px;
+    }
+    p {
+      color: white;
+      // font-size: 85%;
+    }
+    a {
+      color: gray;
+      &:hover {
+        color: #3194e4;
+      }
+    }
+  }
+  #legal-disclaimer {
+    h5 {
+      color: white;
+      padding-bottom: 10px;
+    }
+    p {
+      color: white;
+      // font-size: 85%;
+    }
+  }
+  hr {
+    border-color: gray;
+  }
+  #copyright {
+    p {
+      color: white;
+      // font-size: 85%;
+    }
+    a {
+      color: gray;
+      text-decoration: underline;
+      &:hover {
+        color: #3194e4;
+      }
+    }
+  }
+}
