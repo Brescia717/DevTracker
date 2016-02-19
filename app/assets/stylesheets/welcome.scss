@@ -93,18 +93,17 @@ div.panel-body{
 #profiles-by-framework {
   margin-right: 18%;
   text-align: left;
+  li:first-child {
+    border-top: thin black solid;
+    padding-top: 7px;
+    margin-top: 8px;
+    left: 20px;
+  }
   li {
     border-bottom: thin black solid;
     margin-bottom: 5px;
   }
 }
-#profiles-by-framework li:first-child {
-  border-top: thin black solid;
-  padding-top: 7px;
-  margin-top: 8px;
-  left: 20px;
-}
-
 /* styling for map */
 #map-container {
   margin-right: 30px;
