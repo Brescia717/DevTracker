@@ -85,7 +85,9 @@ div.panel-body{
   }
 }
 #profiles-search-field {
-  width: 220px;
+  width: 240px;
+  float: left;
+  margin-right: 3px;
 }
 #profiles-list {
   list-style-type: none;
@@ -93,18 +95,17 @@ div.panel-body{
 #profiles-by-framework {
   margin-right: 18%;
   text-align: left;
+  li:first-child {
+    border-top: thin black solid;
+    padding-top: 7px;
+    margin-top: 8px;
+    left: 20px;
+  }
   li {
     border-bottom: thin black solid;
     margin-bottom: 5px;
   }
 }
-#profiles-by-framework li:first-child {
-  border-top: thin black solid;
-  padding-top: 7px;
-  margin-top: 8px;
-  left: 20px;
-}
-
 /* styling for map */
 #map-container {
   margin-right: 30px;
@@ -141,7 +142,7 @@ div.panel-body{
 // rgb(31, 112, 219)
 .welcome-background {
   background: $welcome-bg-color;
-  padding: 30px;
+  padding: 50px 30px 100px 30px;
   border-radius: 2px;
 }
 #map {
