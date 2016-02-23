@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:Brescia717/nyan-cat-formatter.git
-  revision: 78f61e4d6c8b2c73260506d1217e66a5432ba7c9
+  revision: 7809cf82dbebc759723355190f1bbceb7df44e90
   specs:
     nyan-cat-formatter (0.10.1)
       rspec (>= 2.99, >= 2.14.2, < 4)
