@@ -7,12 +7,12 @@
       <% @users.each do |user| %>
         <% unless current_user == user %>
           <li>
-            <div class="col-sm-2">
+            <div class="col-md-2 col-xs-6">
               <img id="gravatar-nav"
               src="<%= gravatar_image_url(user.email, size: 25) %>">
               &nbsp;&nbsp;<%= user.user_tag %>
             </div>
-            <div class="col-sm-10">
+            <div class="col-md-10 col-xs-6">
               <%= link_to "Send message", new_message_path(to: user.id),
                           class: "btn btn-default btn-sm" %>
             </div>
