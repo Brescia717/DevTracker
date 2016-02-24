@@ -1,3 +1,6 @@
+// Imports
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
 // Variables
 $profile-bg-color: rgba(57, 166, 255, 0.5);//rgba(110, 223, 235, 0.5);// rgba(43, 214, 237, 0.7);
 
@@ -15,6 +18,9 @@ $profile-bg-color: rgba(57, 166, 255, 0.5);//rgba(110, 223, 235, 0.5);// rgba(43
   }
   h1 {
     color: rgb(245, 245, 245);//rgb(87, 87, 87);
+    font-family: Helvetica, sans-serif;
+    font-weight: 400;
+    letter-spacing: 4px;
   }
   #map {
     margin-left: -14px;
