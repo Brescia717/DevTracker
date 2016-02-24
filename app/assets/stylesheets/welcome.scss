@@ -9,12 +9,17 @@
 // Variables
 $welcome-bg-color: rgba(52, 129, 244, 0.8);
 $sidebar-bg-color: rgba(77, 255, 218, 0.28);
+$bg-img-1: url('/assets/devtracker_bg_1.jpg');
+$bg-img-2: url('/assets/devtracker_bg_2.jpg');
+$bg-img-3: url('/assets/globe_blue.jpg');
 $max-width: 800px;
 $max-height: 400px;
 
 // Styling
 .jumbotron {
-  background: #6edae8 !important;
+  // background: #6edae8 !important;
+  background-image: $bg-img-1;
+  background-size: auto;
 }
 body.welcome.index {
   .alert {
@@ -67,6 +72,7 @@ div.panel-body{
 #sidebar {
   .panel {
     float: left;
+    background-color: rgba(122, 223, 243, 0.60) !important;
   }
   a.btn.btn-default {
     width: 200px;
@@ -141,9 +147,25 @@ div.panel-body{
 
 // rgb(31, 112, 219)
 .welcome-background {
-  background: $welcome-bg-color;
+  z-index: 4;
+  // background: #41C1E4;
+  // background-color: rgba(13, 45, 78, 0.75);
+  background-image: $bg-img-3;
+  background-size: inherit;
+  background-repeat: repeat-x;
   padding: 50px 30px 100px 30px;
   border-radius: 2px;
+  .map-panel {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: rgba(200, 200, 200, 0.8);
+    float: center;
+    position: relative;
+    z-index: 5;
+  }
 }
 #map {
   border-radius: 2px;

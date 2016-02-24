@@ -3,9 +3,18 @@ $profile-bg-color: rgba(57, 166, 255, 0.5);//rgba(110, 223, 235, 0.5);// rgba(43
 
 //Styling
 .users.show {
-  background: $profile-bg-color;
+  z-index: 1;
+  position: relative;
+  background-image: url('/assets/profile_bg_img.jpg');
+  background-repeat: repeat-x;
+  background-size: auto;
+  background-position: relative;
+
+  #users-show {
+    z-index: 2;
+  }
   h1 {
-    color: rgb(87, 87, 87);
+    color: rgb(245, 245, 245);//rgb(87, 87, 87);
   }
   #map {
     margin-left: -14px;
