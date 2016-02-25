@@ -1,7 +1,9 @@
 .users.index {
+  h1{
+    color: white;
+  }
   ul {
     list-style: none;
-
     li {
       span {
         font-weight: bold;
@@ -12,6 +14,18 @@
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
-    background: rgba(95, 215, 215, 0.5);
+    background: rgba(128, 242, 242, 0.8);
   }
+}
+.users.index::after {
+  content: "";
+  background-image: url('/assets/conversations_bg_img.jpg');
+  background-size: cover;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
