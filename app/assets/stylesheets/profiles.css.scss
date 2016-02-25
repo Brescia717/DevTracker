@@ -2,17 +2,14 @@
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 
 // Variables
-$profile-bg-color: rgba(57, 166, 255, 0.5);//rgba(110, 223, 235, 0.5);// rgba(43, 214, 237, 0.7);
+$profile-bg-color: rgba(57, 166, 255, 0.5);
+$bg-img-1: url('/assets/profile_bg_img.jpg');
+$bg-img-2: url('/assets/northern_lights.jpg');
 
 //Styling
 .users.show {
   z-index: 1;
   position: relative;
-  background-image: url('/assets/profile_bg_img.jpg');
-  background-repeat: repeat-x;
-  background-size: auto;
-  background-position: relative;
-
   #users-show {
     z-index: 2;
   }
@@ -26,6 +23,17 @@ $profile-bg-color: rgba(57, 166, 255, 0.5);//rgba(110, 223, 235, 0.5);// rgba(43
     margin-left: -14px;
     border: 2px solid rgb(150, 150, 150);
   }
+}
+.users.show::after {
+  content: "";
+  background: $bg-img-2;
+  opacity: 0.65;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 .profile-form {
   margin-bottom: 2em;
