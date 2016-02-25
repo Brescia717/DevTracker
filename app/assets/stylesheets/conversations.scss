@@ -1,13 +1,14 @@
 // Variables
 $bg-color: #F4F4F4;
 $bg-img-1: url('/assets/conversations_bg_img.jpg');
+$even-list-item-bg-color: #e8e8e8;
+$odd-list-item-bg-color: #f7f7f7;
 
 // Inheritance
 .bg-styling {
   content: "";
   background-image: $bg-img-1;
   background-size: cover;
-  // background-repeat: repeat-y;
   opacity: 0.5;
   top: 0;
   left: 0;
@@ -19,18 +20,34 @@ $bg-img-1: url('/assets/conversations_bg_img.jpg');
 
 // Styling
 .messages {
-  background-color: $bg-color;
+  // background-color: $bg-color;
   max-height: 400px;
   overflow-y: auto;
   margin-bottom: 1em;
   margin-top: 1em;
   z-index: 1;
+  .media:nth-child(even) {
+    .media-body {
+      background-color: $even-list-item-bg-color;
+      padding: 10px;
+      border-radius: 3px;
+    }
+  }
+  .media:nth-child(odd) {
+    .media-body {
+      background-color: $odd-list-item-bg-color;
+      padding: 10px;
+      border-radius: 3px;
+    }
+  }
+  div.panel-body {
+    background-color: gray !important;
+  }
   h1 {
     color: white;
   }
   label {
     color: ghostwhite;
-
   }
 }
 .messages::after {
@@ -49,16 +66,44 @@ $bg-img-1: url('/assets/conversations_bg_img.jpg');
       background-color: rgba(167, 206, 239, 0.50);
     }
   }
+  .sub-header {
+    color: ghostwhite;
+  }
 }
 .conversations::after {
   @extend .bg-styling;
 }
 .conversations.index {
-    .panel {
-      margin-left: auto;
-      margin-right: auto;
-      padding: 10px 10px 0px 10px;
-      background: rgba(160, 200, 213, 0.88);
+  .panel {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 10px 0px 10px;
+    background: rgba(160, 200, 213, 0.88);
+  }
+  .conversation-title {
+    font-size: 14pt;
+  }
+  .list-group-item {
+    a {
+      font-weight: bold;
     }
-
+    p {
+      margin-top: 5px;
+    }
+  }
+  .list-group-item:nth-child(odd) {
+    background-color: $odd-list-item-bg-color;
+  }
+  .list-group-item:nth-child(even) {
+    background-color: $even-list-item-bg-color;
+  }
+}
+.conversations.show {
+  .media img {
+    padding: 5px;
+    background-color: rgba(139, 139, 139, 0.5);
+  }
+  div.panel-body {
+    background-color: rgba(152, 196, 255, 0.8);
+  }
 }
