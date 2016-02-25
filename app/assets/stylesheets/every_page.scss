@@ -1,3 +1,13 @@
 .main {
-  margin-top: 70px;
+  letter-spacing: 1.5px;
+}
+.every-page {
+  z-index: 3;
+  position: relative;
+  padding-top: 70px !important;
+  padding-bottom: 70px !important;
+}
+.alert {
+  margin-top: 60px;
+  margin-bottom: 5px !important;
 }

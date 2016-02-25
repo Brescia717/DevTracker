@@ -14,7 +14,6 @@
 </head>
 <body class="<%= controller_name %> <%= action_name %> main">
 
-
     <%= render 'layouts/nav' %>
 
     <% flash.each do |name, msg| %>
@@ -26,9 +25,9 @@
           <%= msg %>
         </div>
     <% end %>
-
-    <%= yield %>
-
+    <div class="every-page">
+      <%= yield %>
+    </div>
     <footer>
       <div class="container">
         <div class="row">
