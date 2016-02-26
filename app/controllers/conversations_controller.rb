@@ -17,6 +17,7 @@ class ConversationsController < ApplicationController
   end
 
   def show
+    @receipts = @conversation.receipts_for(current_user).order(created_at: :asc)
   end
 
   def reply
